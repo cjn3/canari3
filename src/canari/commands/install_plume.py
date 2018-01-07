@@ -1,8 +1,11 @@
 #!/usr/bin/env python
-import grp
 import os
 import sys
-import pwd
+
+if os.name == 'posix':
+    import pwd
+    import grp
+    
 from stat import ST_MODE, S_ISDIR
 
 from mrbob.bobexceptions import ValidationError

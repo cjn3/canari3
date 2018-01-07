@@ -1,8 +1,10 @@
 import os
 import re
 import sys
-import pwd
 import unicodedata
+
+if os.name == 'posix':
+    import pwd
 
 from argparse import Action
 
