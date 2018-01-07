@@ -85,7 +85,7 @@ def generate_entities_doc(args):
     }
 
     configurator = Configurator(
-            'canari.resources.templates:generate_entities_doc',
+            u'canari.resources.templates:generate_entities_doc',
             args.out_path,
             {'non_interactive': True},
             variables=variables

@@ -50,7 +50,7 @@ def create_package(opts):
 
     if not path.exists(package_name):
         print('creating skeleton in %s' % package_name)
-        configurator = Configurator('canari.resources.templates:create_package',
+        configurator = Configurator(u'canari.resources.templates:create_package',
                                     package_name,
                                     {'non_interactive': False, 'remember_answers': True},
                                     variables=variables,

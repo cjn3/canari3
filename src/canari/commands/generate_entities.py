@@ -202,7 +202,7 @@ def generate_entities(args):
     })
 
     configurator = Configurator(
-            'canari.resources.templates:generate_entities',
+            u'canari.resources.templates:generate_entities',
             target,
             {'non_interactive': True},
             variables=variables

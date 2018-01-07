@@ -65,7 +65,7 @@ def create_transform(args):
     variables.update({'transform.module': transform_module, 'transform.name': transform_name})
 
     configurator = Configurator(
-        'canari.resources.templates:create_transform',
+        u'canari.resources.templates:create_transform',
         target,
         {'non_interactive': True},
         variables=variables

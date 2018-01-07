@@ -131,7 +131,7 @@ def install_plume(opts):
 
 
 def install_defaults(opts):
-    configurator = Configurator('canari.resources.templates:install_plume', '.',
+    configurator = Configurator(u'canari.resources.templates:install_plume', '.',
                                 {'non_interactive': True, 'remember_answers': False})
 
     configurator.variables['plume.venv'] = os.environ.get('VIRTUAL_ENV')
@@ -160,7 +160,7 @@ def install_defaults(opts):
 
 
 def install_wizard(opts):
-    configurator = Configurator('canari.resources.templates:install_plume', '.',
+    configurator = Configurator(u'canari.resources.templates:install_plume', '.',
                                 {'non_interactive': False, 'remember_answers': False})
     configurator.ask_questions()
 
