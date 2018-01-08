@@ -329,10 +329,11 @@ class MaltegoDistribution(object):
             print('WARNING: Transform does not appear to be part of any Transform Sets (Perhaps an error?).')
         
         # On Windows platform, find_executable add .exe ext to dispatcher.bat(dispatcher.bat.exe),
-        # so we temporary change sys.platform to other, make find_executable find dispatcher.bat 
-        platformBackup = sys.platform
-        sys.platform = 'win'
+        # so we temporary change sys.platform to win, make find_executable find dispatcher.bat 
         
+        if sys.platform == 'win32':
+            sys.platform = 'win'
+            
         transform_settings_def = TransformSettings(properties=[
             CmdLineTransformPropertySetting(
                 find_executable(
@@ -345,7 +346,8 @@ class MaltegoDistribution(object):
         ])
         
         # restore sys.platform
-        sys.platform = platformBackup
+        if sys.platform == 'win':
+            sys.platform = 'win32'
     
         self.write_file(
             self.path_join(transform_repository_dir, '%s.transformsettings' % transform_id),
