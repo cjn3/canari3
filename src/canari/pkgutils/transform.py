@@ -260,7 +260,7 @@ class TransformDistribution(object):
                     'profile.path': '${PATH},/usr/local/bin,/opt/local/bin' if os.name == 'posix' else ''
                 }
 
-                configurator = Configurator('canari.resources.templates:create_profile',
+                configurator = Configurator(u'canari.resources.templates:create_profile',
                                             install_prefix,
                                             {'non_interactive': True, 'remember_answers': True},
                                             variables=variables)
